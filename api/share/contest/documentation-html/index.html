@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Bibliothèque Contest: Documentation de la bibliotèque Contest</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Bibliothèque Contest
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.4 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li class="current"><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Documentation de la bibliotèque Contest </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
+Introduction</h1>
+<p>La bibliothèque Contest sert à développer simplement des clients pour le challenge de programmation. Elle est utilisable dans plusieurs langages tels que C++, Python et Java. Son utilisation ne diffère que très peu en fonction du langage utilisé.</p>
+<h1><a class="anchor" id="exemple_sec"></a>
+Exemple</h1>
+<p>Voici un exemple minimaliste d'utilisation en C++ : </p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="contest_8hpp.html">contest.hpp</a>&gt;</span></div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">int</span> main()</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="classSession.html" title="Classe mère qui permet de créer un bot pour le jeu. ">Session</a> session;</div>
+<div class="line"></div>
+<div class="line">    session.<a class="code" href="classSession.html#a508183ee6a0b2fe9d617e6c677b9cc62" title="Connecte le client au serveur. ">connect</a>(<span class="stringliteral">&quot;127.0.0.1&quot;</span>, 4242);</div>
+<div class="line">    session.<a class="code" href="classSession.html#a9a7cb99e2f58c8a8946b51b423995898" title="Définit un login pour le client. ">login</a>(<span class="stringliteral">&quot;DarkVador&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">    session.<a class="code" href="classSession.html#aef77d904b4f828f48cf93267d3bb8936" title="Attend l&#39;initialisation du jeu. ">waitInit</a>();</div>
+<div class="line">    compute_preprocessing();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">while</span>(session.<a class="code" href="classSession.html#ad828306d473e4b05c2caeec4e328ef43" title="Attend le début d&#39;un tour. ">waitRoundStarting</a>() == <a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33af67ee3073776e1a24076e909e0d117e8">ROUND_NORMAL</a>)</div>
+<div class="line">        compute_one_round(session);</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Voici le même exemple d'utilisation en Python : </p>
+<div class="fragment"><div class="line"><span class="keyword">import</span> contest</div>
+<div class="line"></div>
+<div class="line">session = contest.<a class="code" href="classSession.html#ad92ef09b872c9227e38a6efdd4d8a837" title="Constructeur de Session. ">Session</a>()</div>
+<div class="line"></div>
+<div class="line">session.connect(<span class="stringliteral">&#39;127.0.0.1&#39;</span>, 4242)</div>
+<div class="line">session.login(<span class="stringliteral">&#39;DarkVador&#39;</span>)</div>
+<div class="line"></div>
+<div class="line">session.waitInit()</div>
+<div class="line">compute_preprocessing(session)</div>
+<div class="line"></div>
+<div class="line">while session.waitRoundStarting() == <a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33af67ee3073776e1a24076e909e0d117e8">ROUND_NORMAL</a>:</div>
+<div class="line">    compute_one_round(session)</div>
+</div><!-- fragment --><p>Voici encore le même exemple d'utilisation mais en Java : </p>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>Test</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">static</span></div>
+<div class="line">    {</div>
+<div class="line">        System.loadLibrary(<span class="stringliteral">&quot;contest&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> main(<a class="code" href="contest_8hpp.html#ad3834cab10a0d63f8168683208864a90">String</a>[] args)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="classSession.html" title="Classe mère qui permet de créer un bot pour le jeu. ">Session</a> session = <span class="keyword">new</span> <a class="code" href="classSession.html" title="Classe mère qui permet de créer un bot pour le jeu. ">Session</a>();</div>
+<div class="line"></div>
+<div class="line">        session.<a class="code" href="classSession.html#a508183ee6a0b2fe9d617e6c677b9cc62" title="Connecte le client au serveur. ">connect</a>(<span class="stringliteral">&quot;127.0.0.1&quot;</span>, (<span class="keywordtype">short</span>)4242);</div>
+<div class="line">        session.<a class="code" href="classSession.html#a9a7cb99e2f58c8a8946b51b423995898" title="Définit un login pour le client. ">login</a>(<span class="stringliteral">&quot;DarkVador&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">        session.<a class="code" href="classSession.html#aef77d904b4f828f48cf93267d3bb8936" title="Attend l&#39;initialisation du jeu. ">waitInit</a>();</div>
+<div class="line">        compute_preprocessing();</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">while</span>(session.<a class="code" href="classSession.html#ad828306d473e4b05c2caeec4e328ef43" title="Attend le début d&#39;un tour. ">waitRoundStarting</a>() == <a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33" title="État d&#39;un tour du jeu. ">RoundState</a>.ROUND_NORMAL)</div>
+<div class="line">            compute_one_round(session);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="play_sec"></a>
+À vous de jouer !</h1>
+<pre class="fragment">                                                 ____________
+                                  --)-----------|____________|
+                                                ,'       ,'   
+                  -)------========            ,'  ____ ,'     
+                           `.    `.         ,'  ,'__ ,'       
+                             `.    `.     ,'       ,'         
+                               `.    `._,'_______,'__         
+                                 [._ _| ^--      || |         
+                         ____,...-----|__________ll_|\        
+        ,.,..-------"""""     "----'                 ||       
+    .-""  |=========================== ______________ |       
+     "-...l_______________________    |  |'      || |_]       
+                                  [`-.|__________ll_|         
+                                ,'    ,' `.        `.         
+                              ,'    ,'     `.    ____`.       
+                  -)---------========        `.  `.____`.     
+                                               `.        `.   
+                                                 `.________`. 
+                                 --)-------------|___________|
+                                                   Strutsified  </pre> </div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Samedi Mars 15 2014 09:18:19 pour Bibliothèque Contest par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

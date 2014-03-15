@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Bibliothèque Contest:  Fichier source de contest.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Bibliothèque Contest
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.4 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">contest.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="contest_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="contest_8hpp.html#af6e8ce24bedd0f3ee8aee3b4f24f62ee">  102</a></span>&#160;<span class="preprocessor">#define List std::vector</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="contest_8hpp.html#ad3834cab10a0d63f8168683208864a90">  103</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define String std::string</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">struct </span>SessionData;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5">  110</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5" title="État du bot après authentification auprès du serveur. ">LoginResult</a></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5a9da8cbfbe2c1a4f3ebd3d44a961adabb">  112</a></span>&#160;    <a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5a9da8cbfbe2c1a4f3ebd3d44a961adabb">LOGIN_OK</a>,</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5aec530e75f309cd84b46706b21dbb31d7">  113</a></span>&#160;    <a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5aec530e75f309cd84b46706b21dbb31d7">LOGIN_NO_MORE_ROOM</a>,</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5ad3a77ffe9262aa63d200ccc7ab24abf3">  114</a></span>&#160;    <a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5ad3a77ffe9262aa63d200ccc7ab24abf3">LOGIN_INVALID</a>,</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5af213f055761ad24cb3bfbf16df9c96cf">  115</a></span>&#160;    <a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5af213f055761ad24cb3bfbf16df9c96cf">LOGIN_ALREADY_USED</a>,</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5aacd58dab4f6806323895d8063083ab32">  116</a></span>&#160;    <a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5aacd58dab4f6806323895d8063083ab32">LOGIN_NETWORK_ERROR</a></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;};</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33">  121</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33" title="État d&#39;un tour du jeu. ">RoundState</a></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33af67ee3073776e1a24076e909e0d117e8">  123</a></span>&#160;    <a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33af67ee3073776e1a24076e909e0d117e8">ROUND_NORMAL</a>,</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33a94242427ff45bea58bc9516b76e0534b">  124</a></span>&#160;    <a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33a94242427ff45bea58bc9516b76e0534b">ROUND_END_OF_GAME</a>,</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33a95e9bdf013252e747f7c624b094ffd8f">  125</a></span>&#160;    <a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33a95e9bdf013252e747f7c624b094ffd8f">ROUND_NETWORK_ERROR</a></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;};</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="code" href="structGameInfos.html">  132</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structGameInfos.html" title="Structure contenant toutes les données nécessaires à propos du message initial du serveur...">GameInfos</a></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="code" href="structGameInfos.html#a0cf3371a55d5fbba9e1a1ff8e97316d0">  135</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structGameInfos.html#a0cf3371a55d5fbba9e1a1ff8e97316d0" title="Identifiant du joueur courant. ">playerId</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="code" href="structGameInfos.html#a276ac0eab432ef64bddc29cf1664184b">  138</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structGameInfos.html#a276ac0eab432ef64bddc29cf1664184b" title="Nombre de joueurs au début de la partie. ">playerCount</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="code" href="structGameInfos.html#a23f47c5292349796639260b4da64b083">  141</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structGameInfos.html#a23f47c5292349796639260b4da64b083" title="Nombre maximum de tours. ">totalRoundCount</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="code" href="structGameInfos.html#a31417980c52b314d056227e137b21fd9">  144</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structGameInfos.html#a31417980c52b314d056227e137b21fd9" title="Identifiant du tour actuel entre 1 et totalRoundCount (0 lors de l&#39;initialisation) ...">currentRoundId</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="code" href="structGameInfos.html#a2ff77ef6721e9f927a21df26707fabc3">  147</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structGameInfos.html#a2ff77ef6721e9f927a21df26707fabc3" title="Nombre total de planètes dans la partie. ">planetCount</a>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="code" href="structGameInfos.html#a5469e04bafb4eda8394d649cab1d0255">  150</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structGameInfos.html#a5469e04bafb4eda8394d649cab1d0255" title="Ressources globales actuelles (0 lors de l&#39;initialisation) ">resources</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="code" href="structGameInfos.html#a7fd6d9e0ba54a60988c3b8ec7ce89ded">  153</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structGameInfos.html#a7fd6d9e0ba54a60988c3b8ec7ce89ded" title="Nombre maximal de scans autorisés par tour. ">scanCountLimit</a>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="code" href="structGameInfos.html#ac486905b8a8f651a642df5c88cbebe41">  156</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structGameInfos.html#ac486905b8a8f651a642df5c88cbebe41" title="Coût en ressources d’un vaisseau. ">shipCost</a>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;};</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="code" href="structPlanet.html">  161</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structPlanet.html" title="Structure contenant les informations sur l’une de nos planètes. ">Planet</a></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="code" href="structPlanet.html#a72aad45238ed8584ecffd0be89e5be4c">  164</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structPlanet.html#a72aad45238ed8584ecffd0be89e5be4c" title="Identifiant de la planète. ">planetId</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="code" href="structPlanet.html#a6f5e035a7d32f8ca12ba3802d8a20a7f">  167</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structPlanet.html#a6f5e035a7d32f8ca12ba3802d8a20a7f" title="Ressources accumulées à chaque tour grâce à cette planète. ">resources</a>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="code" href="structPlanet.html#aaafba0d269979efb576d63529d21ad7f">  170</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structPlanet.html#aaafba0d269979efb576d63529d21ad7f" title="Nombre limite de vaisseaux pouvant être construits à chaque tour sur cette planète. ">shipBuildCountLimit</a>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="code" href="structPlanet.html#a56cce1bdabbddd7808fcdc0649f34ce5">  173</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structPlanet.html#a56cce1bdabbddd7808fcdc0649f34ce5" title="Nombre de vaisseaux actuellement présents autour de cette planète. ">shipCount</a>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    </div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="code" href="structPlanet.html#a0b00897ffe0ca8c6e4141f93920ff1b5">  176</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structPlanet.html#a0b00897ffe0ca8c6e4141f93920ff1b5" title="Nombre de tours restants pendant lequel on a le bonus de doublement de vitesse des flottes sur cette ...">doubleSpeedRemainingTurns</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;};</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="code" href="structScanResult.html">  181</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structScanResult.html" title="Structure contenant le résultat d’un scan. ">ScanResult</a></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;{</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="code" href="structScanResult.html#a7b481f056eec821b2dd807d73a92be67">  184</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structScanResult.html#a7b481f056eec821b2dd807d73a92be67" title="Identifiant de la planète scannée. ">planetId</a>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="code" href="structScanResult.html#a04df15ff5fc262881927f25ba289a829">  187</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structScanResult.html#a04df15ff5fc262881927f25ba289a829" title="Identifiant du joueur qui possède la planète scannée. ">playerId</a>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="code" href="structScanResult.html#ace7f155e803f511e1f8f374d345ebf9a">  190</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structScanResult.html#ace7f155e803f511e1f8f374d345ebf9a" title="Ressources accumulées par le joueur à chaque tour grâce à cette planète. ">resources</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="code" href="structScanResult.html#ad8b04f03e869e7956f95208d848c269d">  193</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structScanResult.html#ad8b04f03e869e7956f95208d848c269d" title="Nombre limite de vaisseaux pouvant être construit à chaque tour sur cette planète. ">shipBuildCountLimit</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="code" href="structScanResult.html#a8a8a62024ff3a42a4143a446aac276d0">  196</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structScanResult.html#a8a8a62024ff3a42a4143a446aac276d0" title="Nombre de vaisseaux actuellement présents autour de cette planète. ">shipCount</a>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;};</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="code" href="structFleet.html">  201</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structFleet.html" title="Structure contenant les informations sur nos flottes en cours de déplacement. ">Fleet</a></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="code" href="structFleet.html#ac2ecdb582c4f9c2d6bfff891e7e9740a">  204</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structFleet.html#ac2ecdb582c4f9c2d6bfff891e7e9740a" title="Identifiant de la planête depuis laquelle les vaisseaux sont partis. ">sourcePlanetId</a>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="code" href="structFleet.html#ac0aee6eececf5d16f76e62b609036cc1">  207</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structFleet.html#ac0aee6eececf5d16f76e62b609036cc1" title="Identifiant de la planête vers laquelle les vaisseaux se dirigent. ">destinationPlanetId</a>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="code" href="structFleet.html#a447268fd50083011107ef2be2a81ce2f">  210</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structFleet.html#a447268fd50083011107ef2be2a81ce2f" title="Nombre de vaisseaux présents dans la flotte. ">shipCount</a>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="code" href="structFleet.html#ae29df18bb69eac590ea69be19f5b0f56">  213</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structFleet.html#ae29df18bb69eac590ea69be19f5b0f56" title="Nombre de tours restants avant l&#39;arrivée des vaisseaux. ">remainingRound</a>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;};</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="code" href="structEnnemy.html">  218</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structEnnemy.html" title="Structure contenant les informations sur les flottes ennemies arrivant vers une de nos planètes...">Ennemy</a></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="code" href="structEnnemy.html#a40ed0e5da81387ff57866d530161cc4a">  221</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structEnnemy.html#a40ed0e5da81387ff57866d530161cc4a" title="Identifiant de la planête depuis laquelle les vaisseaux sont partis. ">sourcePlanetId</a>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="code" href="structEnnemy.html#a91ef1d2a58b3ccecaabc4a0b1e5e5557">  224</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structEnnemy.html#a91ef1d2a58b3ccecaabc4a0b1e5e5557" title="Identifiant de la planête vers laquelle les vaisseaux se dirigent. ">destinationPlanetId</a>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="code" href="structEnnemy.html#a549c87ec8dda885c287339610a4cc545">  227</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structEnnemy.html#a549c87ec8dda885c287339610a4cc545" title="Nombre de vaisseaux présents dans la flotte (ce nombre est une estimation) ">shipCount</a>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno"><a class="code" href="structEnnemy.html#a62ff1a822bfe89e8d6bc3251ce222837">  230</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structEnnemy.html#a62ff1a822bfe89e8d6bc3251ce222837" title="Nombre de tours restants avant l&#39;arrivée des vaisseaux. ">remainingRound</a>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;};</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="code" href="structFightReport.html">  235</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structFightReport.html" title="Structure contenant les informations sur les rapports de combat. ">FightReport</a></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{</div>
+<div class="line"><a name="l00238"></a><span class="lineno"><a class="code" href="structFightReport.html#aa22ef023d3e1b6c0502f6f14494488b7">  238</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structFightReport.html#aa22ef023d3e1b6c0502f6f14494488b7" title="Identifiant de la planête autour de laquelle les vaisseaux ont combattu. ">planetId</a>;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
+<div class="line"><a name="l00241"></a><span class="lineno"><a class="code" href="structFightReport.html#abea56cbe98e847d6eadaf79583f8c532">  241</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structFightReport.html#abea56cbe98e847d6eadaf79583f8c532" title="Identifiant du joueur qui a gagné la bataille. ">winnerPlayerId</a>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno"><a class="code" href="structFightReport.html#a300b8fc2c66bf6c919f0410cb97274d4">  244</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structFightReport.html#a300b8fc2c66bf6c919f0410cb97274d4" title="Nombre de joueurs présents dans la bataille. ">playerCount</a>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno"><a class="code" href="structFightReport.html#a3253890041efc1586c323495ac7f998c">  247</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structFightReport.html#a3253890041efc1586c323495ac7f998c" title="Nombre de vaisseaux restant du joueur survivant. ">remainingShip</a>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;};</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a0bded724464d411efe80143964775017">  251</a></span>&#160;<span class="keyword">typedef</span> List&lt;Planet&gt; <a class="code" href="contest_8hpp.html#a0bded724464d411efe80143964775017">PlanetList</a>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="code" href="contest_8hpp.html#aca85b0749812b52d80253a33df00179b">  252</a></span>&#160;<span class="keyword">typedef</span> List&lt;ScanResult&gt; <a class="code" href="contest_8hpp.html#aca85b0749812b52d80253a33df00179b">ScanResultList</a>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a72d90c1c6e1468bcee3ae774d8d052f9">  253</a></span>&#160;<span class="keyword">typedef</span> List&lt;Fleet&gt; <a class="code" href="contest_8hpp.html#a72d90c1c6e1468bcee3ae774d8d052f9">FleetList</a>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="code" href="contest_8hpp.html#af5cb24ef5cc01ca610cd21dad0bcf899">  254</a></span>&#160;<span class="keyword">typedef</span> List&lt;Ennemy&gt; <a class="code" href="contest_8hpp.html#af5cb24ef5cc01ca610cd21dad0bcf899">EnnemyList</a>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno"><a class="code" href="contest_8hpp.html#a75010252204babd078d5b011d63d1d1d">  255</a></span>&#160;<span class="keyword">typedef</span> List&lt;FightReport&gt; <a class="code" href="contest_8hpp.html#a75010252204babd078d5b011d63d1d1d">FightReportList</a>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno"><a class="code" href="contest_8hpp.html#aafa33407a722ad1306e4d93fac4c741e">  256</a></span>&#160;<span class="keyword">typedef</span> List&lt;int&gt; <a class="code" href="contest_8hpp.html#aafa33407a722ad1306e4d93fac4c741e">IntList</a>;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno"><a class="code" href="classGameData.html">  260</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGameData.html" title="Classe permettant d&#39;obtenir de nombreuses informations sur le jeu. ">GameData</a></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="structGameInfos.html" title="Structure contenant toutes les données nécessaires à propos du message initial du serveur...">GameInfos</a> _gameInfos;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <a class="code" href="contest_8hpp.html#a0bded724464d411efe80143964775017">PlanetList</a> _planetList;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="contest_8hpp.html#aca85b0749812b52d80253a33df00179b">ScanResultList</a> _scanResultList;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="contest_8hpp.html#a72d90c1c6e1468bcee3ae774d8d052f9">FleetList</a> _fleetList;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="contest_8hpp.html#af5cb24ef5cc01ca610cd21dad0bcf899">EnnemyList</a> _ennemyList;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="contest_8hpp.html#a75010252204babd078d5b011d63d1d1d">FightReportList</a> _fightReportList;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <a class="code" href="contest_8hpp.html#aafa33407a722ad1306e4d93fac4c741e">IntList</a> _distances;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <a class="code" href="classGameData.html" title="Classe permettant d&#39;obtenir de nombreuses informations sur le jeu. ">GameData</a>();</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <a class="code" href="structGameInfos.html" title="Structure contenant toutes les données nécessaires à propos du message initial du serveur...">GameInfos</a> <a class="code" href="classGameData.html#a91022b278000006ce133aee6e2115673" title="Récupére les informations générales sur le jeu en cours. ">globalInformations</a>();</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="contest_8hpp.html#a0bded724464d411efe80143964775017">PlanetList</a> <a class="code" href="classGameData.html#ae795b2e891b7986cd0725e67175e9894" title="Récupére une liste des planètes qui vous appartiennent. ">planets</a>();</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <a class="code" href="contest_8hpp.html#aca85b0749812b52d80253a33df00179b">ScanResultList</a> <a class="code" href="classGameData.html#a84f805456f7f0a6b19283242fb6b06d1" title="Récupére les résultats des scans du dernier tour. ">scanResults</a>();</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <a class="code" href="contest_8hpp.html#a72d90c1c6e1468bcee3ae774d8d052f9">FleetList</a> <a class="code" href="classGameData.html#aae1443e045192ed68f4049a2a6a9423f" title="Récupére toutes les flottes qu’on a actuellement lancées. ">fleets</a>();</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <a class="code" href="contest_8hpp.html#af5cb24ef5cc01ca610cd21dad0bcf899">EnnemyList</a> <a class="code" href="classGameData.html#aa3c4af7621a22e69226cc2ee621d10f4" title="Récupére toutes les flottes ennemies se dirigeant vers une de vos planètes. ">enemies</a>();</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="contest_8hpp.html#a75010252204babd078d5b011d63d1d1d">FightReportList</a> <a class="code" href="classGameData.html#a559ccebf12489093279c033eb65926cc" title="Récupére tous les rapports de combat envoyés au tour précédent. ">reports</a>();</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classGameData.html#a95714adfaa89bca3ffd05a0fbbb36be4" title="Récupère la distance entre deux planètes. ">distance</a>(<span class="keywordtype">int</span> planetA, <span class="keywordtype">int</span> planetB);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno"><a class="code" href="classGameData.html#abd5ae25c2c6cf33257f2b137194a2a5f">  311</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code" href="classGameData.html#abd5ae25c2c6cf33257f2b137194a2a5f">SessionData</a>;</div>
+<div class="line"><a name="l00312"></a><span class="lineno"><a class="code" href="classGameData.html#afbdd63a566878ce30072e785ca7e7740">  312</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classSession.html" title="Classe mère qui permet de créer un bot pour le jeu. ">Session</a>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;};</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno"><a class="code" href="classSession.html">  317</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSession.html" title="Classe mère qui permet de créer un bot pour le jeu. ">Session</a></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;{</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    SessionData* _data;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <a class="code" href="classSession.html#ad92ef09b872c9227e38a6efdd4d8a837" title="Constructeur de Session. ">Session</a>();</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="classSession.html#a8753bb9dee966b7d39abc9b7237cd665" title="Destructeur de Session. ">~Session</a>();</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classSession.html#a508183ee6a0b2fe9d617e6c677b9cc62" title="Connecte le client au serveur. ">connect</a>(<a class="code" href="contest_8hpp.html#ad3834cab10a0d63f8168683208864a90">String</a> host, <span class="keywordtype">int</span> port);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSession.html#ac1d7d7cd89077a840a6e52d3cd80f58e" title="Déconnecte le client du serveur. ">disconnect</a>();</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="contest_8hpp.html#a3b6904b8a00ed8f7a67396dee6e9aef5" title="État du bot après authentification auprès du serveur. ">LoginResult</a> <a class="code" href="classSession.html#a9a7cb99e2f58c8a8946b51b423995898" title="Définit un login pour le client. ">login</a>(<a class="code" href="contest_8hpp.html#ad3834cab10a0d63f8168683208864a90">String</a> pseudo);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classSession.html#aef77d904b4f828f48cf93267d3bb8936" title="Attend l&#39;initialisation du jeu. ">waitInit</a>();</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <a class="code" href="contest_8hpp.html#a42ea950e27c46d03efbb42fe43496f33" title="État d&#39;un tour du jeu. ">RoundState</a> <a class="code" href="classSession.html#ad828306d473e4b05c2caeec4e328ef43" title="Attend le début d&#39;un tour. ">waitRoundStarting</a>();</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <a class="code" href="classGameData.html" title="Classe permettant d&#39;obtenir de nombreuses informations sur le jeu. ">GameData</a> <a class="code" href="classSession.html#aae4ddb9a208b27c0d6e7919c71f1587c" title="Récupère une classe permettant d&#39;obtenir de nombreuses informations sur le jeu. ">gameData</a>();</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSession.html#aa054212fbedc1e743a11121412d91525" title="Ordonne un scan sur la planète ayant l&#39;identifiant idPlanet. ">orderScan</a>(<span class="keywordtype">int</span> planetId);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSession.html#a713ec1c6a0817179184152d87f1e7162" title="Ordonne la construction de nbVaisseaux vaisseaux sur la planète dont l&#39;identifiant est planetSourceId...">orderBuild</a>(<span class="keywordtype">int</span> planetSourceId, <span class="keywordtype">int</span> shipCount);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSession.html#aa0d3bd9aa10766b9668bb80a02104e04" title="Ordonne un mouvement de shipCount vaisseaux de planetSourceId à planetDestinationId. ">orderMove</a>(<span class="keywordtype">int</span> planetSourceId, <span class="keywordtype">int</span> planetDestinationId, <span class="keywordtype">int</span> shipCount);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSession.html#a1d7042a939d16d886313e27ae142ab67" title="Envoie d’un coup au serveur tous les ordres précédemment émis. ">sendOrders</a>();</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSession.html#a127227d18aa4b31ca53d8a8a531ab082" title="Efface tous les ordres donnés qui n&#39;ont pas encore été envoyés. ">clearOrders</a>();</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classSession.html#ab3877bc41098f14fdb1d8b57abc78cd7" title="Permet de savoir si on est connecté au serveur. ">isConnected</a>();</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <a class="code" href="contest_8hpp.html#ad3834cab10a0d63f8168683208864a90">String</a> <a class="code" href="classSession.html#a53b1781ac095a93733004787d187f5f0" title="Récupère la dernière erreur survenue sous la forme d&#39;une chaine lisible par des humains. ">lastError</a>();</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keyword">typedef</span> std::pair&lt;char, std::string&gt; Message;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordtype">void</span> sendMessage(<span class="keyword">const</span> Message&amp; message);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    Message waitMessage(std::string expectedType);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordtype">void</span> setError(<span class="keyword">const</span> std::string&amp; error);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    std::vector&lt;int&gt; toIntArray(<span class="keyword">const</span> std::string&amp; str, <span class="keywordtype">char</span> delim);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    std::vector&lt;std::string&gt; split(<span class="keyword">const</span> std::string&amp; str, <span class="keywordtype">char</span> delim);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordtype">int</span> toInt(<span class="keyword">const</span> std::string&amp; str);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;};</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Samedi Mars 15 2014 09:18:19 pour Bibliothèque Contest par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>
