@@ -1,0 +1,20 @@
+#include <contest.hpp>
+
+void check_err_log(LoginResult r) {
+  switch(r) {
+  case LOGIN_NO_MORE_ROOM:
+    cout << "[ERR] Serveur plein." << endl;
+    break;
+  case LOGIN_INVALID:
+    cout << "[ERR] Login invalide." << endl;
+    break;
+  case LOGIN_ALREADY_USED:
+    cout << "[ERR] Login deja pris." << endl;
+    break;
+  case LOGIN_NETWORK_ERROR:
+    cout << "[ERR] Erreur reseau." << endl;
+    break;
+  default:
+    cout << "[ERR] Erreur]" << endl;
+  }
+}
