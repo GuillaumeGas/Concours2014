@@ -105,6 +105,7 @@ void IA::pass_rowAtt() {
   }
 }
 
+<<<<<<< HEAD
 void IA::move_fleet(int planet_Id, int From){
 	for( auto it : planet){
 		if(it.planetId == planet_Id){
@@ -113,4 +114,19 @@ void IA::move_fleet(int planet_Id, int From){
 			}
 		}
 	}
+=======
+void IA::get_distances() {
+  m_game_info = my_info->globalInformations();
+  for(int i = 0; i < m_game_info.planetCount; i++) {
+    for(int j = 0; j < m_game_info.planetCount; j++) {
+      m_distances.insert(pair<pair<int, int>, int >(pair<int, int>(i, j), my_info->distance(i, j)));
+    }			 
+  }
+}
+
+void IA::show_distances() {
+  for(auto it : m_distances) {
+    cout << "distance " << it.first.first << " - " << it.first.second << " = " << it.second << endl;
+  }
+>>>>>>> c8947f676ae2accebbc5d80a9e3cef20311885e8
 }
