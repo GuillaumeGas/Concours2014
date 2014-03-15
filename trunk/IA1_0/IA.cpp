@@ -188,23 +188,24 @@ void IA::pass_rowLuck() {
     cout << "test2" << endl;
     cout << "plante : " << planet.size() << endl;
     if ( planet.size() >  0 ) {
-      //for(int i = 0; i < planet.size(); i++) {
+      for(int j = 0; j < planet.size(); i++) {
 	cout << "pass row luck" << endl;
-	int id = planet[0].planetId;
-	int nb = planet[0].shipCount/2;
+	int id = planet[j].planetId;
+	int nb = planet[j].shipCount/2;
 	int dist = 0;
 	int dist_r = -1;
 	while ( nb >= 0 && dist != dist_r) { 
 	  dist_r = dist;
-	  int i = get_nearest ( planet[0].planetId , dist, dist_r);
-	  vector<int> v = get_near(planet[0].planetId, dist);
+	  int i = get_nearest ( planet[j].planetId , dist, dist_r);
+	  cout << "dist = " << dist << endl;
+	  vector<int> v = get_near(planet[j].planetId, dist);
 	  for ( int i = 0 ; i < v.size() && nb > 0; i++ ) {
-	    move_fleet( v[i], planet[0].planetId);
+	    move_fleet( v[i], planet[j].planetId);
 	    nb--;
 	  }
 	}
-	create_sheepDef( planet[0].planetId, 2);
-	//}
+	create_sheepDef( planet[j].planetId, 2);
+      }
       jouer =true;
     }
   } else {
