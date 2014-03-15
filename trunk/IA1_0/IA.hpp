@@ -4,6 +4,7 @@
 #include <iostream>
 #include <contest.hpp>
 #include <map>
+#include <vector>
 
 #define List std::vector
 #define String std::string

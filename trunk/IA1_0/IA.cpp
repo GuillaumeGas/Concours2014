@@ -67,10 +67,12 @@ void IA::pass_rowDef(){
 
   int nb = res/L.size();
   cout << "nb" << endl;
+  int rst = res - nb*L.size();
 	for(auto it : L){
 		create_sheepDef(it.planetId,nb);
 		//cout << "pla : " << it.planetId << endl;
 	}
+  create_sheepDef(L[0].planetId,rst);
 	cout << "jouer" << endl;
 	jouer = true;
 }
