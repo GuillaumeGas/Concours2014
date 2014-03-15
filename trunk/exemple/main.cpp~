@@ -1,0 +1,16 @@
+#include <contest.hpp>
+
+int main() {
+  Session session;
+
+  session.connect("127.0.0.1", 4242);
+  session.login("supergrossevache");
+
+  session.waitInit();
+  compute_preprocessing();
+
+  while(session.waitRoundStarting() == ROUND_NORMAL)
+    compute_one_round(session);
+
+  return 0;
+}
