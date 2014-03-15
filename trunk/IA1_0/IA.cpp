@@ -174,11 +174,11 @@ void IA::pass_rowAtt() {
   jouer = true;
 }
 
-void IA::move_fleet(int planet_Id, int From){
+void IA::move_fleet(int planet_Id, int From, int nb){
   //for( auto it : planet){
   //if(it.planetId == planet_Id){
   //if(it.shipCount > 2){
-  session->orderMove(From,planet_Id,2);
+  session->orderMove(From,planet_Id,nb);
   //	}
   //		}
   //	}
@@ -238,7 +238,7 @@ void IA::pass_rowLuck() {
 	  cout << "dist = " << dist << endl;
 	  vector<int> v = get_near(planet[j].planetId, dist);
 	  for ( int i = 0 ; i < v.size() && nb > 0; i++ ) {
-	    move_fleet( v[i], planet[j].planetId);
+	    move_fleet( v[i], planet[j].planetId, nb/v.size());
 	    nb--;
 	  }
 	}
