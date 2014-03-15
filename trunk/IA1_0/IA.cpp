@@ -40,9 +40,9 @@ void IA::create_sheepDef(int planet_Id){
 	for(auto it : planet){
 		if(it.planetId == planet_Id){
 			int max(it.shipBuildCountLimit);
-			if(max < it.resources/my_info->globalInformations().shipCost){
+			//if(max < it.resources/my_info->globalInformations().shipCost){
 				session->orderBuild(planet_Id,max);
-			}
+				//}
 		}
 	}
 }
