@@ -13,7 +13,7 @@ Connection::Connection(string ip,int port , string pseudo){
 	}
 }
 
-Connection::start(/*IA & ia*/){
+void Connection::start(/*IA & ia*/){
 	if(session.waitInit()){
 		while(session.waitRoundStarting()){
 			//ia.readData(session.gameData());
