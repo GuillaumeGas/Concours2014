@@ -40,29 +40,39 @@ void IA::change_state(State_t state) {
 
 
 
-void IA::create_sheepDef(int planet_Id){
-  for(auto it : planet){
-    if(it.planetId == planet_Id){
-      
-      int max(it.shipBuildCountLimit);
-      cout << "max = " << max << endl;
-      max = it.resources/my_info->globalInformations().shipCost;
-      cout << "max2 = " << max << " itressource = " << it.resources << " cost = " << my_info->globalInformations().shipCost <<endl;
-      session->orderBuild(planet_Id,max);
-				
-    }
-  }
+void IA::create_sheepDef(int planet_Id,int nb){
+  session->orderBuild(planet_Id,nb);
 }
 
 void IA::pass_rowDef(){
 
-	for(auto it : planet){
-		create_sheepDef(it.planetId);
+  int res(0);
+  for(auto it : planet){
+    res+= it.resources;
+  }
+  res/=my_info->globalInformations().shipCost;
+
+  int min(100);
+  for(auto it : planet){
+    if(it.shipCount < min)
+      min = it.shipCount;
+  }
+
+  PlanetList L;
+  for(auto it : planet){
+    if(min == it.shipCount)
+      L.pushback(it);
+  }
+
+  int nb = res/L.size();
+	for(auto it : L){
+		create_sheepDef(it.planetId,nb);
 		cout << "pla : " << it.planetId << endl;
 	}
 	cout << "jouer" << endl;
 	jouer = true;
 }
+
 
 int IA::choose_Planet(int & nbship) {
   int planet = -1;
