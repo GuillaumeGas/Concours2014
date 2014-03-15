@@ -116,7 +116,6 @@ void IA::get_distances() {
 }
 
 
-
 void IA::pass_rowLuck() {
   if ( my_info->globalInformations().currentRoundId < 3 ) {    
     if ( planet.size >  0 ) {
@@ -131,5 +130,11 @@ void IA::pass_rowLuck() {
     }
   } else {
     change_state(DEFENSE);
+  }
+}
+
+void IA::show_distances() {
+  for(auto it : m_distances) {
+    cout << "distance " << it.first.first << " - " << it.first.second << " = " << it.second << endl;
   }
 }
