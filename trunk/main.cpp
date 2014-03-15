@@ -6,7 +6,7 @@ using namespace std;
 int main(int argc,char ** argv){
 	try{
 		Connection game(argv[1],atoi(argv[2]),"TeamPower");
-		game.start();	
+		game.start();
 	}catch(const char * e){
 		cerr<<e<<endl;
 		return -1;

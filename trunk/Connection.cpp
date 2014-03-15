@@ -4,8 +4,8 @@ using namespace std;
 Connection::Connection(string ip,int port , string pseudo){
 	session.connect(ip,port);
 	if(session.isConnected()){
-		string err = check_err_log(session.login(pseudo));
-		if(err!="LOGIN_OK"){
+		LoginResult lr = session.login(pseudo);
+		if(lr!=LOGIN_OK){
 			throw session.lastError().c_str();
 		}
 	}else{
@@ -14,6 +14,7 @@ Connection::Connection(string ip,int port , string pseudo){
 }
 
 void Connection::start(/*IA & ia*/){
+cout<<"start"<<endl;
 while(!session.waitInit()){cout<<"waiting ..."<<endl;}
 	cout<<"game started"<<endl;
 	while(true){
