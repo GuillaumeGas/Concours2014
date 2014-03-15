@@ -40,6 +40,32 @@ void IA::change_state(State_t state) {
 
 
 
+int IA::get_nearest_friend(int Planet_Id) {
+  int planet;
+  int min = -1;
+  for ( auto it : planet ){
+    auto it2 = m_distance.find( pair<int, int>( Planet_Id, it.planetId ) );
+    if ( (it2.second < min || min == -1 ) && it2.second != 0) {
+      min = it2.second;
+      planet = it.planetId;
+    }
+  }
+  return planet;
+}
+
+
+void IA::fuir( int Planet_Id ) {
+  vector<Ennemy> v = my_info->enemies();
+  for ( auto it : v ) {
+    if ( it.destinationPlanetId == Planet_Id ) {
+      if ( it.shipCount >= planet[Planet_Id].shipCount ) {
+	session->orderMove ( get_nearest_friend, Planet_Id, planet[Planet_Id].shipCount );
+      }
+    }
+  }
+}
+
+
 void IA::create_sheepDef(int planet_Id,int nb){
   session->orderBuild(planet_Id,nb);
 }
