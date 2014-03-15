@@ -3,7 +3,7 @@ using namespace std;
 
 void IA::choose(){
   load_info();
-  !jouer = false;
+  jouer = false;
   while (!jouer) {
     if(state == ATTACK)
       pass_rowAtt();
@@ -41,21 +41,27 @@ void IA::change_state(State_t state) {
 
 
 void IA::create_sheepDef(int planet_Id){
-	for(auto it : planet){
-		if(it.planetId == planet_Id){
-			int max(it.shipBuildCountLimit);
-			//if(max < it.resources/my_info->globalInformations().shipCost){
-				session->orderBuild(planet_Id,max);
-				//}
-		}
-	}
+  for(auto it : planet){
+    if(it.planetId == planet_Id){
+      
+      int max(it.shipBuildCountLimit);
+      cout << "max = " << max << endl;
+      max = it.resources/my_info->globalInformations().shipCost;
+      cout << "max2 = " << max << " itressource = " << it.resources << " cost = " << my_info->globalInformations().shipCost <<endl;
+      session->orderBuild(planet_Id,max);
+				
+    }
+  }
 }
 
 void IA::pass_rowDef(){
 
 	for(auto it : planet){
 		create_sheepDef(it.planetId);
+		cout << "pla : " << it.planetId << endl;
 	}
+	cout << "jouer" << endl;
+	jouer = true;
 }
 
 int IA::choose_Planet(int & nbship) {
@@ -182,7 +188,7 @@ void IA::pass_rowLuck() {
 	  nb--;
 	}
       }
-      create_sheepDef( planet[0]);
+      create_sheepDef( planet[0].planetId);
       jouer =true;
     }
   } else {
