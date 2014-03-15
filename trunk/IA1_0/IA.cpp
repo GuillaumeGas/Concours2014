@@ -17,10 +17,14 @@ void IA::load_info(){
 		if(information.find(it->planetId) != information.end()){
 			information.erase(it->planetId);
 		}
-		information[it->planetId] = pair<int,ScanResult>(my_info->currentRoundId,*it);
+		information[it->planetId] = pair<int,ScanResult>(my_info->globalInformations().currentRoundId,*it);
 	}
 }
 
+
+void IA::set_session(Session * s){
+	session=s;
+}
 
 
 
@@ -28,30 +32,27 @@ void IA::load_info(){
 void IA::create_sheepDef(int planet_Id){
 	for(auto it : planet){
 		if(it.planetId == planet_Id){
-			orderBuild(planet_Id,it.shipBuildCountLimit-1)
+			s->orderBuild(planet_Id,it.shipBuildCountLimit-1);
 		}
 	}
 }
 
 void IA::pass_rowDef(){
-	RoundState R;
-	R = waitRoundStarting();
-	if(R = ROUND_NORMAL){
-		load_info();
-		for(auto it : planet){
-			create_sheepDef(it->planetId);
-		}
+	load_info();
+	for(auto it : planet){
+		create_sheepDef(it.planetId);
 	}
 }
 
-int IA::choose_Planet() {
+int IA::choose_Planet(int & nbship) {
   int planet = -1;
   int min = -1;
   for ( auto it : information ) {    
-    if ( it.second.first == my_info->currentRoundId ) {
+    if ( it.second.first == my_info->globalInformations().currentRoundId ) {
       if ( min > it.second.second.shipCount || min == -1 ) {
        min = it.second.second.shipCount;
        planet = it.first;
+       nbship = min;
      }
    }
  } 
@@ -69,19 +70,19 @@ void IA::attack_planet ( int Planet_Id, int From ) {
   int nb = 0;
   for ( auto it : planet ) {
     if ( it.planetId == From ) {
-      nb = it.shipCount();
+      nb = it.shipCount;
     }
   }
-  orderMove ( from, Planet_Id, nb );
+  s->orderMove ( From, Planet_Id, nb );
 }
 
 
 void IA::create_sheepAtt( int Planet_Id ) {
-  int nb = my_info->resources*my_info->shipCost;
+  int nb = my_info->globalInformations().resources*my_info->globalInformations().shipCost;
   if ( nb > planet[Planet_Id].shipBuildCountLimit) {
     nb =  planet[Planet_Id].shipBuildCountLimit;
   }
-  orderBuild( Planet_Id, nb);
+  s->orderBuild( Planet_Id, nb);
 }
 
 

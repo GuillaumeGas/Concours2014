@@ -22,6 +22,7 @@ public:
   void change_state();
   void read_data( GameData * info );
   void load_info();
+  void set_session(Session * s);
 
   void choose();
 
@@ -33,8 +34,8 @@ public:
   
 
   //ATTACK
-  int choose_Planet(); //choisi la planete a attaque
-  void attack_planet(int Planet_Id); // attaque une planete 
+  int choose_Planet(int & nbship); //choisi la planete a attaque
+  void attack_planet(int Planet_Id, int From); // attaque une planete 
   void create_sheepAtt(int Planete_Id); // creer les vaisseau d'une planete
   int choose_att();
   
@@ -49,6 +50,7 @@ public:
 
 private:
 
+  Session * session;
   GameData * my_info;
   std::map < int, std::pair < int, ScanResult > > information;
   State_t state;
