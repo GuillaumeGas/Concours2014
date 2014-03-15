@@ -1,9 +1,7 @@
-#include <contest.hpp>
 #include <iostream>
+#include "../err.hpp"
 
 using namespace std;
-
-
 
 int main() {
   Session session;
@@ -16,7 +14,7 @@ int main() {
   
   LoginResult res_log = session.login("supergrossevache");
   if(res_log != LOGIN_OK) {
-    check_err(res_log);
+    check_err_log(res_log);
     return -1;
   }
 

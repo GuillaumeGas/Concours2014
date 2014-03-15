@@ -33,7 +33,7 @@ string check_err_round(RoundState r) {
   case ROUND_NETWORK_ERROR:
     msg = "[ERR] Erreur reseau";
     break;
-  case default:
+  default:
     msg = "[ERR]";
   }
   cout << msg << endl;
