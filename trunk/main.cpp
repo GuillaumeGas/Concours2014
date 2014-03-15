@@ -5,7 +5,8 @@ using namespace std;
 
 int main(int argc,char ** argv){
 	try{
-		Connection(argv[1],atoi(argv[2]),"TeamPower");	
+		Connection game(argv[1],atoi(argv[2]),"TeamPower");
+		game.start();	
 	}catch(const char * e){
 		cerr<<e<<endl;
 		return -1;
