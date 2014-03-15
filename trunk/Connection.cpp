@@ -6,7 +6,7 @@ Connection::Connection(string ip,int port , string pseudo){
 	if(session.isConnected()){
 		string err = check_err_log(session.login(pseudo));
 		if(err!="LOGIN_OK"){
-			throw "[err]" + session.lastError().c_str();
+			throw session.lastError().c_str();
 		}
 	}else{
 		throw session.lastError().c_str();
