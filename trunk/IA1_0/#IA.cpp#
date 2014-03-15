@@ -2,10 +2,17 @@
 using namespace std;
 
 void IA::choose(){
-	if(state == ATTACK)
-		pass_rowAtt();
-	else
-		pass_rowDef();
+  load_info();
+  jouer = false;
+  while (!jouer) {
+    if(state == ATTACK)
+      pass_rowAtt();
+    else if ( state == DEFENSE )
+      pass_rowDef();
+    else 
+      pass_rowLuck();
+
+  }
 }
 
 void IA::load_info(){
@@ -34,21 +41,27 @@ void IA::change_state(State_t state) {
 
 
 void IA::create_sheepDef(int planet_Id){
-	for(auto it : planet){
-		if(it.planetId == planet_Id){
-			int max(it.shipBuildCountLimit);
-			if(max < it.resources/my_info->globalInformations().shipCost){
-				session->orderBuild(planet_Id,max);
-			}
-		}
-	}
+  for(auto it : planet){
+    if(it.planetId == planet_Id){
+      
+      int max(it.shipBuildCountLimit);
+      cout << "max = " << max << endl;
+      max = it.resources/my_info->globalInformations().shipCost;
+      cout << "max2 = " << max << " itressource = " << it.resources << " cost = " << my_info->globalInformations().shipCost <<endl;
+      session->orderBuild(planet_Id,max);
+				
+    }
+  }
 }
 
 void IA::pass_rowDef(){
-	load_info();
+
 	for(auto it : planet){
 		create_sheepDef(it.planetId);
+		cout << "pla : " << it.planetId << endl;
 	}
+	cout << "jouer" << endl;
+	jouer = true;
 }
 
 int IA::choose_Planet(int & nbship) {
@@ -105,18 +118,20 @@ void IA::pass_rowAtt() {
       attack_planet( planet_att, planet_to );
     } else {
       //change_state();
+      return;
     }
   }
+  jouer = true;
 }
 
 void IA::move_fleet(int planet_Id, int From){
-	for( auto it : planet){
-		if(it.planetId == planet_Id){
+  //for( auto it : planet){
+  //if(it.planetId == planet_Id){
 		  //if(it.shipCount > 2){
-				session->orderMove(planet_Id,From,2);
-				//}
-		}
-	}
+		  session->orderMove(From,planet_Id,2);
+				//	}
+		  //		}
+		//	}
 }
 void IA::get_distances() {
   m_game_info = my_info->globalInformations();
@@ -128,18 +143,30 @@ void IA::get_distances() {
 }
 
 
+/*
+scanFrom(colonie) {
+
+}
+ */
+
 void IA::pass_rowLuck() {
-  cout << "debut pass row lock" << endl;
-  if ( my_info->globalInformations().currentRoundId < 3 ) {    
+  cout << "test 1" << endl;
+  if ( my_info->globalInformations().currentRoundId < 2 ) {    
+    cout << "test2" << endl;
+    cout << "plante : " << planet.size() << endl;
     if ( planet.size() >  0 ) {
+      cout << "pass row luck" << endl;
       int id = planet[0].planetId;
       int nb = 0;
       for ( int i = 0 ; i < m_game_info.planetCount ; i++ ) {
-	if ( m_distances.find ( pair< int, int >(id, i ) )->second == 1 && nb < 3 ) {
+	if ( m_distances.find ( pair< int, int >(id, i ) )->second < 10 && m_distances.find ( pair< int, int >(id, i ) )->second > 0 && nb < 3 ) {
+	  cout << "boucle pass row luck" << endl;
 	  move_fleet( i , id );
 	  nb++;
 	}
       }
+      create_sheepDef( planet[0].planetId);
+      jouer =true;
     }
   } else {
     change_state(DEFENSE);

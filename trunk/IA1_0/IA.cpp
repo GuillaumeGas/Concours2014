@@ -77,6 +77,9 @@ void IA::pass_rowDef(){
     res+= it.resources;
   }
   res/=my_info->globalInformations().shipCost;
+  if(my_info->globalInformations().shipCost == 0) {
+    cout << "ERROOOOOOOOOOOOOOOOOOOOOR" << endl;
+  }
 
   int min(100);
   for(auto it : planet){
@@ -89,14 +92,18 @@ void IA::pass_rowDef(){
     if(min == it.shipCount)
       L.push_back(it);
   }
-
+  
+if(L.size() == 0) {
+    cout << "ERRROOOOOR = " << L.size() << endl;
+  }
   int nb = res/L.size();
+  
   int rst = res - nb*L.size();
 	for(auto it : L){
 		create_sheepDef(it.planetId,nb);
-		cout << "pla : " << it.planetId << endl;
+		//cout << "pla : " << it.planetId << endl;
 	}
-  create_sheepDef(L[0],rst);
+  create_sheepDef(L[0].planetId,rst);
 	cout << "jouer" << endl;
 	jouer = true;
 }
@@ -214,7 +221,7 @@ void IA::pass_rowLuck() {
     cout << "test2" << endl;
     cout << "plante : " << planet.size() << endl;
     if ( planet.size() >  0 ) {
-      for(int j = 0; j < planet.size(); i++) {
+      for(int j = 0; j < planet.size(); j++) {
 	cout << "pass row luck" << endl;
 	int id = planet[j].planetId;
 	int nb = planet[j].shipCount/2;
