@@ -60,7 +60,7 @@ void IA::pass_rowDef(){
     if(it.shipCount < min)
       min = it.shipCount;
   }
-
+  cout << "min" << min << endl;
   PlanetList L;
   for(auto it : planet){
     if(min == it.shipCount)
