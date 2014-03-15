@@ -78,3 +78,20 @@ void IA::create_sheepAtt( int Planet_Id ) {
   }
   orderBuild( Planet_Id, nb);
 }
+
+
+
+void IA::pass_rowAtt() {
+  int planet_att = choose_att();
+  int nbShip;
+  int planet_to = choose_Planet(nbShip);
+  
+  for ( auto it : planet ) {
+    if ( planet_att == it.planetId && it.shipCount > nbShip ) {
+      create_sheepAtt( planet_att );
+      attack_planet( planet_att, planet_to );
+    } else {
+      change_state();
+    }
+  }
+}
