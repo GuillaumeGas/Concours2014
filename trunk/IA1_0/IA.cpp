@@ -137,6 +137,31 @@ void IA::get_distances() {
 }
 
 
+
+int IA::get_nearest(int planet_id, int & dist, int far) {
+  int planet = 0;
+  for ( int i = 0 ; i < m_game_info.planetCount ; i++ ) {
+    auto it = m_distances.find ( ( pair< int, int >(id, i ) );
+    if ( it->second < min && it->second > far ) || min == -1 ) {
+      planet = i;
+      dist = it->second;
+    }
+  }
+  return planet;
+}
+
+
+vector <int> IA::get_near( int planet_id , int dist ) {
+  vector<int> v;
+  for ( int i = 0 ; i < m_game_info.planetCount ; i++ ) {
+    auto it = m_distances.find ( ( pair< int, int >(id, i ) );
+				 if ( it->second < min && it->second > 0 ) || min == -1 ) {
+      v.push_back(i);
+    }
+  }
+}
+
+
 void IA::pass_rowLuck() {
   cout << "test 1" << endl;
   if ( my_info->globalInformations().currentRoundId < 2 ) {    
@@ -145,12 +170,16 @@ void IA::pass_rowLuck() {
     if ( planet.size() >  0 ) {
       cout << "pass row luck" << endl;
       int id = planet[0].planetId;
-      int nb = 0;
-      for ( int i = 0 ; i < m_game_info.planetCount ; i++ ) {
-	if ( m_distances.find ( pair< int, int >(id, i ) )->second < 10 && m_distances.find ( pair< int, int >(id, i ) )->second > 0 && nb < 3 ) {
-	  cout << "boucle pass row luck" << endl;
-	  move_fleet( i , id );
-	  nb++;
+      int nb = planet[0].shipCount/2;
+      int dist = 0;
+      int dist_r = -1;
+      while ( nb >= 0 && dist != dist_r) { 
+	dist_r = dist;
+	int i = get_nearest ( planet[0].planetId , dist, dist_r);
+	vector<int> v = get_near(dist);
+	for ( int i = 0 ; i < v.size() ; i++ ) {
+	  move_fleet( v[i], planet[0].planetId);
+	  nb--;
 	}
       }
       create_sheepDef( planet[0]);
