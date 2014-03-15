@@ -27,3 +27,14 @@ void IA::create_sheepDef(int planet_Id){
 		}
 	}
 }
+
+void IA::pass_rowDef(){
+	RoundState R;
+	R = waitRoundStarting();
+	if(R = ROUND_NORMAL){
+		load_info();
+		for(auto it : planet){
+			create_sheepDef(it->planetId);
+		}
+	}
+}
