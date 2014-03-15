@@ -37,7 +37,7 @@ void IA::create_sheepDef(int planet_Id){
 	for(auto it : planet){
 		if(it.planetId == planet_Id){
 			int max(it.shipBuildCountLimit);
-			if(max < it.resources/my_info->globalInformations().shipCost;{
+			if(max < it.resources/my_info->globalInformations().shipCost){
 				session->orderBuild(planet_Id,max);
 			}
 		}
@@ -109,7 +109,6 @@ void IA::pass_rowAtt() {
   }
 }
 
-<<<<<<< HEAD
 void IA::move_fleet(int planet_Id, int From){
 	for( auto it : planet){
 		if(it.planetId == planet_Id){
@@ -118,7 +117,7 @@ void IA::move_fleet(int planet_Id, int From){
 			}
 		}
 	}
-=======
+}
 void IA::get_distances() {
   m_game_info = my_info->globalInformations();
   for(int i = 0; i < m_game_info.planetCount; i++) {
@@ -136,7 +135,7 @@ void IA::pass_rowLuck() {
       int nb = 0;
       for ( int i = 0 ; i < m_game_info.planetCount ; i++ ) {
 	if ( m_distances.find ( pair< int, int >(id, i ) )->second == 1 && nb < 3 ) {
-	  //move_fleet( i , id );
+	  move_fleet( i , id );
 	  nb++;
 	}
       }
@@ -150,5 +149,5 @@ void IA::show_distances() {
   for(auto it : m_distances) {
     cout << "distance " << it.first.first << " - " << it.first.second << " = " << it.second << endl;
   }
->>>>>>> c8947f676ae2accebbc5d80a9e3cef20311885e8
+
 }
