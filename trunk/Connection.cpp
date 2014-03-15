@@ -25,6 +25,7 @@ if(session.waitInit()){
 		ia.read_data(gd);
 		if(t0){
 			ia.get_distances();
+			ia.show_distances();
 			t0=false;
 		}
 		ia.choose();

@@ -8,8 +8,6 @@ int main(int argc,char ** argv){
 	IA ia;
 	try{
 		Connection game(argv[1],atoi(argv[2]),"TeamPower");
-		ia.get_distances();
-		ia.show_distances(); //fonction de test
 		game.start(ia);
 	}catch(const char * e){
 		cerr<<e<<endl;
