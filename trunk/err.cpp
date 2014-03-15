@@ -17,6 +17,8 @@ string check_err_log(LoginResult r) {
   case LOGIN_NETWORK_ERROR:
     msg = "[ERR] Erreur reseau.";
     break;
+  case LOGIN_OK:
+    break;
   default:
     msg = "[ERR] Erreur]";
   }
@@ -32,6 +34,8 @@ string check_err_round(RoundState r) {
     break;
   case ROUND_NETWORK_ERROR:
     msg = "[ERR] Erreur reseau";
+    break;
+  case ROUND_NORMAL:
     break;
   default:
     msg = "[ERR]";

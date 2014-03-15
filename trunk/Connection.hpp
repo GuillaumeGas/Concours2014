@@ -9,7 +9,8 @@ private:
 	std::string pseudo;
 	Session session;
 public:
-	Connection(std::string ip,std::string port,std::string pseudo);
+	Connection(std::string ip,int port,std::string pseudo);
+	void start(/*IA & a*/);
 	~Connection();
 };
 

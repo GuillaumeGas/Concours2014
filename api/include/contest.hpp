@@ -94,6 +94,8 @@
 ///                                      --)-------------|___________|
 ///                                                        Strutsified
 
+#ifndef _CONTEST
+#define _CONTEST
 
 #include <string>
 #include <vector>
@@ -400,3 +402,4 @@ class Session
 };
 
 
+#endif
