@@ -15,13 +15,14 @@ Connection::Connection(string ip,int port , string pseudo){
 
 void Connection::start(IA & ia){
 cout<<"start"<<endl;
+ia.set_session(&session);
 if(session.waitInit()){
 	cout<<"game started"<<endl;
 	while(true){
 		session.waitRoundStarting();
 		GameData gd = session.gameData();
 		ia.read_data(gd);
-		ia.set_session(&session);
+		ia.choose();
 		session.sendOrders();
 
 	}

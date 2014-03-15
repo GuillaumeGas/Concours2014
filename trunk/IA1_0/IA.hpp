@@ -18,7 +18,7 @@ public:
   enum State_t {
     ATTACK, DEFENSE
   };
-  IA(){}
+  IA(){state = DEFENSE;}
   //void change_state();
   void read_data( GameData & info );
   void load_info();
