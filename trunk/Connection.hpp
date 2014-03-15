@@ -10,7 +10,7 @@ private:
 	Session session;
 public:
 	Connection(std::string ip,int port,std::string pseudo);
-	start(IA & a);
+	start(/*IA & a*/);
 	~Connection();
 };
 
