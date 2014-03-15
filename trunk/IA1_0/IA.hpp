@@ -2,10 +2,10 @@
 #define _IA
 
 #include <iostream>
-using namespace std;
+#include <map>
 
-#define List vector
-#define String string
+#define List std::vector
+#define String std::string
 typedef List<Planet> PlanetList;
 typedef List<ScanResult> ScanResultList;
 typedef List<Fleet> FleetList;
@@ -21,7 +21,8 @@ class IA {
 
   IA ( );
   void change_state();
-  void load_info(GameInfos info);
+  void read_data( GameInfos );
+  void load_info();
 
   void choose();
 
@@ -50,9 +51,9 @@ class IA {
 private:
 
   GameInfos my_info;
-  vector < int > information;
+  std::map < int, std::pair < int, ScanResult > > information;
   State_t state;
-
+  PlanetList planet;
 
 };
 
