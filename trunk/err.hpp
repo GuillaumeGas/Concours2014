@@ -1,6 +1,6 @@
 #include <iostream>
 #include <contest.hpp>
 
-void check_err_log(LoginResult r);
-void check_err_round(RoundState r);
+std::string check_err_log(LoginResult r);
+std::string check_err_round(RoundState r);
 

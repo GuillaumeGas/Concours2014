@@ -3,6 +3,8 @@
 
 using namespace std;
 
+
+
 int main() {
   Session session;
 
@@ -12,7 +14,11 @@ int main() {
   }
   cout << session.lastError() << endl;
   
-  session.login("supergrossevache");
+  LoginResult res_log = session.login("supergrossevache");
+  if(res_log != LOGIN_OK) {
+    check_err(res_log);
+    return -1;
+  }
 
   session.waitInit();
   //compute_preprocessing();

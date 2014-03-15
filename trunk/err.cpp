@@ -2,34 +2,40 @@
 
 using namespace std;
 
-void check_err_log(LoginResult r) {
+string check_err_log(LoginResult r) {
+  string msg;
   switch(r) {
   case LOGIN_NO_MORE_ROOM:
-    cout << "[ERR] Serveur plein." << endl;
+    msg = "[ERR] Serveur plein.";
     break;
   case LOGIN_INVALID:
-    cout << "[ERR] Login invalide." << endl;
+    msg = "[ERR] Login invalide.";
     break;
   case LOGIN_ALREADY_USED:
-    cout << "[ERR] Login deja pris." << endl;
+    msg = "[ERR] Login deja pris.";
     break;
   case LOGIN_NETWORK_ERROR:
-    cout << "[ERR] Erreur reseau." << endl;
+    msg = "[ERR] Erreur reseau.";
     break;
   default:
-    cout << "[ERR] Erreur]" << endl;
+    msg = "[ERR] Erreur]";
   }
+  cout << msg << endl;
+  return msg;
 }
 
-void check_err_round(RoundState r) {
+string check_err_round(RoundState r) {
+  string msg;
   switch(r) {
   case ROUND_END_OF_GAME:
-    cout << "Partie terminee !" << endl;
+    msg = "Partie terminee !";
     break;
   case ROUND_NETWORK_ERROR:
-    cout << "[ERR] Erreur reseau" << endl;
+    msg = "[ERR] Erreur reseau";
     break;
   case default:
-    cout << "[ERR]" << endl;
+    msg = "[ERR]";
   }
+  cout << msg << endl;
+  return msg;
 }
