@@ -2,10 +2,13 @@
 using namespace std;
 
 void IA::choose(){
+  load_info();
 	if(state == ATTACK)
-		pass_rowAtt();
-	else
-		pass_rowDef();
+	  pass_rowAtt();
+	else if ( state == DEFENSE )
+	  pass_rowDef();
+	else 
+	  pass_rowLuck();
 }
 
 void IA::load_info(){
@@ -45,7 +48,7 @@ void IA::create_sheepDef(int planet_Id){
 }
 
 void IA::pass_rowDef(){
-	load_info();
+
 	for(auto it : planet){
 		create_sheepDef(it.planetId);
 	}
