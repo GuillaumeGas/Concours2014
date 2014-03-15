@@ -110,3 +110,9 @@ void IA::get_distances() {
     }			 
   }
 }
+
+void IA::show_distances() {
+  for(auto it : m_distances) {
+    cout << "distance " << it.first.first << " - " << it.first.second << " = " << it.second << endl;
+  }
+}

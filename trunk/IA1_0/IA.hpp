@@ -33,6 +33,7 @@ public:
 
   //a lancer au démarrage
   void get_distances();
+  void show_distances(); //fonction de test
 
   //ATTACK
   int choose_Planet(int & nbship); //choisi la planete a attaque
