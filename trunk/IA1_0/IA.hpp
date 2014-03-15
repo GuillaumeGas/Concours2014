@@ -16,9 +16,9 @@ typedef List<FightReport> FightReportList;
 class IA {
 public:
   enum State_t {
-    ATTACK, DEFENSE
+    ATTACK, DEFENSE, LUCK
   };
-  IA(){state = DEFENSE;}
+  IA(){state = LUCK;}
   //void change_state();
   void read_data( GameData & info );
   void load_info();
@@ -30,6 +30,8 @@ public:
 
   void pass_rowAtt();
   void pass_rowDef();
+  void pass_rowLuck(); 
+
 
   //a lancer au démarrage
   void get_distances();

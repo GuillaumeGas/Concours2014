@@ -27,6 +27,10 @@ void IA::set_session(Session * s){
 }
 
 
+void IA::change_state(State_t state) {
+  this.state = state;
+}
+
 
 
 void IA::create_sheepDef(int planet_Id){
@@ -121,6 +125,24 @@ void IA::get_distances() {
     for(int j = 0; j < m_game_info.planetCount; j++) {
       m_distances.insert(pair<pair<int, int>, int >(pair<int, int>(i, j), my_info->distance(i, j)));
     }			 
+  }
+}
+
+
+void IA::pass_rowLuck() {
+  if ( my_info->globalInformations().currentRoundId < 3 ) {    
+    if ( planet.size >  0 ) {
+      int id = planet[0].planetId;
+      int nb = 0;
+      for ( int i = 0 ; i < my_info->globalInformations() ; i++ ) {
+	if ( m_distance.find ( pair< int, int >(id, i ) )->second == 1 && nb < 3 ) {
+	  move_fleet( i , id );
+	  nb++;
+	}
+      }
+    }
+  } else {
+    change_state(DEFENSE);
   }
 }
 
