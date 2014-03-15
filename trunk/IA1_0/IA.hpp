@@ -27,7 +27,7 @@ public:
 
   void choose();
 
-
+  int get_nearest_friend(int);
 
   void pass_rowAtt();
   void pass_rowDef();
