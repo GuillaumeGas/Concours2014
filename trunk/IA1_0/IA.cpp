@@ -3,12 +3,16 @@ using namespace std;
 
 void IA::choose(){
   load_info();
-	if(state == ATTACK)
-	  pass_rowAtt();
-	else if ( state == DEFENSE )
-	  pass_rowDef();
-	else 
-	  pass_rowLuck();
+  !jouer = false;
+  while (!jouer) {
+    if(state == ATTACK)
+      pass_rowAtt();
+    else if ( state == DEFENSE )
+      pass_rowDef();
+    else 
+      pass_rowLuck();
+
+  }
 }
 
 void IA::load_info(){
@@ -108,8 +112,10 @@ void IA::pass_rowAtt() {
       attack_planet( planet_att, planet_to );
     } else {
       //change_state();
+      return;
     }
   }
+  jouer = true;
 }
 
 void IA::move_fleet(int planet_Id, int From){
@@ -147,6 +153,8 @@ void IA::pass_rowLuck() {
 	  nb++;
 	}
       }
+      create_sheepDef( planet[0]);
+      jouer =true;
     }
   } else {
     change_state(DEFENSE);

@@ -61,6 +61,7 @@ private:
   std::map < std::pair< int, int >, int > m_distances;
   State_t state;
   PlanetList planet;
+  bool jouer;
 
 };
 
