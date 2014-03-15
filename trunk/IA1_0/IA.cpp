@@ -32,7 +32,10 @@ void IA::set_session(Session * s){
 void IA::create_sheepDef(int planet_Id){
 	for(auto it : planet){
 		if(it.planetId == planet_Id){
-			session->orderBuild(planet_Id,it.shipBuildCountLimit-1);
+			int max(it.shipBuildCountLimit);
+			if(max < it.resources/my_info->globalInformations().shipCost;{
+				session->orderBuild(planet_Id,max);
+			}
 		}
 	}
 }
@@ -100,4 +103,14 @@ void IA::pass_rowAtt() {
       //change_state();
     }
   }
+}
+
+void IA::move_fleet(int planet_Id, int From){
+	for( auto it : planet){
+		if(it.planetId == planet_Id){
+			if(it.shipCount > 2){
+				session->orderMove(planet_Id,From,2);
+			}
+		}
+	}
 }
