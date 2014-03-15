@@ -129,6 +129,7 @@ void IA::get_distances() {
 
 
 void IA::pass_rowLuck() {
+  cout << "debut pass row lock" << endl;
   if ( my_info->globalInformations().currentRoundId < 3 ) {    
     if ( planet.size() >  0 ) {
       int id = planet[0].planetId;

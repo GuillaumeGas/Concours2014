@@ -134,10 +134,12 @@ void IA::get_distances() {
 void IA::pass_rowLuck() {
   if ( my_info->globalInformations().currentRoundId < 3 ) {    
     if ( planet.size() >  0 ) {
+      cout << "pass row luck" << endl;
       int id = planet[0].planetId;
       int nb = 0;
       for ( int i = 0 ; i < m_game_info.planetCount ; i++ ) {
 	if ( m_distances.find ( pair< int, int >(id, i ) )->second == 1 && nb < 3 ) {
+	  cout << "boucle pass row luck" << endl;
 	  move_fleet( i , id );
 	  nb++;
 	}
