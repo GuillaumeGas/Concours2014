@@ -1,10 +1,29 @@
-#include <iostream>
-using namespace std;
+#include "IA.hpp"
 
-#define List vector
-#define String string
-typedef List<Planet> PlanetList;
-typedef List<ScanResult> ScanResultList;
-typedef List<Fleet> FleetList;
-typedef List<Ennemy> EnnemyList;
-typedef List<FightReport> FightReportList;
+void IA::choose(){
+	if(state == "ATTACK")
+		pass_rowAtt();
+	else
+		pass_rowDef();
+}
+
+void IA::load_info(){
+	planet = planets();
+	ScanResultList L;
+	L = scanResults();
+	auto it(L.begin()):
+	for(it;it != L.end(); it++){
+		if(information.find(it->planetId) != information.end()){
+			information.erase(planetId);
+		}
+		information[planetId] = pair<int,scanResult>(my_info.currentRoundld,*it)
+	}
+}
+
+void IA::create_sheepDef(int planet_Id){
+	for(auto it : planet){
+		if(it.planetId == planet_Id){
+			orderBuild(planet_Id,it.shipBuildCountLimit-1)
+		}
+	}
+}
