@@ -4,6 +4,7 @@ using namespace std;
 void IA::choose(){
   load_info();
   jouer = false;
+  change_state(LUCK);
   while (!jouer) {
     if(state == ATTACK)
       pass_rowAtt();
@@ -59,7 +60,7 @@ void IA::fuir( int Planet_Id ) {
   for ( auto it : v ) {
     if ( it.destinationPlanetId == Planet_Id ) {
       if ( it.shipCount >= planet[Planet_Id].shipCount ) {
-	session->orderMove ( get_nearest_friend, Planet_Id, planet[Planet_Id].shipCount );
+	      session->orderMove ( get_nearest_friend, Planet_Id, planet[Planet_Id].shipCount );
       }
     }
   }
@@ -217,7 +218,7 @@ vector <int> IA::get_near( int planet_id , int dist ) {
 
 void IA::pass_rowLuck() {
   cout << "test 1" << endl;
-  if ( my_info->globalInformations().currentRoundId < 2 ) {    
+  if ( my_info->globalInformations().currentRoundId % 5 == 1 ) {    
     cout << "test2" << endl;
     cout << "plante : " << planet.size() << endl;
     if ( planet.size() >  0 ) {
