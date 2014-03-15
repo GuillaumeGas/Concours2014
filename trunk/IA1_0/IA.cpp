@@ -1,4 +1,4 @@
-#include "IA.hpp"
+  #include "IA.hpp"
 
 void IA::choose(){
 	if(state == "ATTACK")
@@ -8,9 +8,9 @@ void IA::choose(){
 }
 
 void IA::load_info(){
-	planet = planets();
+	planet = my_info.planets();
 	ScanResultList L;
-	L = scanResults();
+	L = my_info.scanResults();
 	auto it(L.begin()):
 	for(it;it != L.end(); it++){
 		if(information.find(it->planetId) != information.end()){
@@ -19,6 +19,10 @@ void IA::load_info(){
 		information[planetId] = pair<int,scanResult>(my_info.currentRoundld,*it)
 	}
 }
+
+
+
+
 
 void IA::create_sheepDef(int planet_Id){
 	for(auto it : planet){
@@ -53,7 +57,7 @@ int IA::choose_Planet() {
   return planet;
 }
 
-void IA::read_data ( GameInfos info ) {
+void IA::read_data ( Gamedata info ) {
   my_info = info;
 }
 

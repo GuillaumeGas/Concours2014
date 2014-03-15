@@ -21,7 +21,7 @@ class IA {
 
   IA ( );
   void change_state();
-  void read_data( GameInfos );
+  void read_data( GameData );
   void load_info();
 
   void choose();
@@ -34,10 +34,10 @@ class IA {
   
 
   //ATTACK
-  void choose_Planet(); //choisi la planete a attaque
+  int choose_Planet(); //choisi la planete a attaque
   void attack_planet(int Planet_Id); // attaque une planete 
   void create_sheepAtt(int Planete_Id); // creer les vaisseau d'une planete
-  
+  int choose_att();
   
 
   //DEF
@@ -50,7 +50,7 @@ class IA {
 
 private:
 
-  GameInfos my_info;
+  GameData my_info;
   std::map < int, std::pair < int, ScanResult > > information;
   State_t state;
   PlanetList planet;
