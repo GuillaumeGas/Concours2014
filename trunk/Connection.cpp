@@ -13,13 +13,13 @@ Connection::Connection(string ip,int port , string pseudo){
 	}
 }
 
-void Connection::start(/*IA & ia*/){
+void Connection::start(IA & ia){
 cout<<"start"<<endl;
 if(session.waitInit()){
 	cout<<"game started"<<endl;
 	while(true){
 		session.waitRoundStarting();
-			//ia.readData(session.gameData());
+		ia.read_data(&session.gameData());
 	}
 }else{
 	throw session.lastError().c_str();

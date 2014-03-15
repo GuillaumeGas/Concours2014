@@ -2,6 +2,7 @@
 #define _IA
 
 #include <iostream>
+#include <contest.hpp>
 #include <map>
 
 #define List std::vector
@@ -13,15 +14,13 @@ typedef List<Ennemy> EnnemyList;
 typedef List<FightReport> FightReportList;
 
 class IA {
-
+public:
   enum State_t {
     ATTACK, DEFENSE
   };
-
-
-  IA ( );
+  IA(){}
   void change_state();
-  void read_data( GameData );
+  void read_data( GameData * info );
   void load_info();
 
   void choose();
@@ -50,7 +49,7 @@ class IA {
 
 private:
 
-  GameData my_info;
+  GameData * my_info;
   std::map < int, std::pair < int, ScanResult > > information;
   State_t state;
   PlanetList planet;

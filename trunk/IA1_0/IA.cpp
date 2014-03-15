@@ -1,22 +1,23 @@
-  #include "IA.hpp"
+#include "IA.hpp"
+using namespace std;
 
 void IA::choose(){
-	if(state == "ATTACK")
+	if(state == ATTACK)
 		pass_rowAtt();
 	else
 		pass_rowDef();
 }
 
 void IA::load_info(){
-	planet = my_info.planets();
+	planet = my_info->planets();
 	ScanResultList L;
-	L = my_info.scanResults();
-	auto it(L.begin()):
+	L = my_info->scanResults();
+	auto it(L.begin());
 	for(it;it != L.end(); it++){
 		if(information.find(it->planetId) != information.end()){
-			information.erase(planetId);
+			information.erase(it->planetId);
 		}
-		information[planetId] = pair<int,scanResult>(my_info.currentRoundld,*it)
+		information[it->planetId] = pair<int,ScanResult>(my_info->currentRoundId,*it);
 	}
 }
 
@@ -47,17 +48,17 @@ int IA::choose_Planet() {
   int planet = -1;
   int min = -1;
   for ( auto it : information ) {    
-    if ( it.second.first == my_info.currentRoundId ) {
+    if ( it.second.first == my_info->currentRoundId ) {
       if ( min > it.second.second.shipCount || min == -1 ) {
-	min = it.second.second.shipCount;
-	planet = it.first;
-      }
-    }
-  } 
-  return planet;
+       min = it.second.second.shipCount;
+       planet = it.first;
+     }
+   }
+ } 
+ return planet;
 }
 
-void IA::read_data ( Gamedata info ) {
+void IA::read_data ( GameData * info ) {
   my_info = info;
 }
 
@@ -76,7 +77,7 @@ void IA::attack_planet ( int Planet_Id, int From ) {
 
 
 void IA::create_sheepAtt( int Planet_Id ) {
-  int nb = my_info.resources*my_info.shipCost;
+  int nb = my_info->resources*my_info->shipCost;
   if ( nb > planet[Planet_Id].shipBuildCountLimit) {
     nb =  planet[Planet_Id].shipBuildCountLimit;
   }

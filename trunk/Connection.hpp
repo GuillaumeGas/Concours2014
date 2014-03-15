@@ -3,6 +3,7 @@
 
 #include <contest.hpp>
 #include "err.hpp"
+#include "IA1_0/IA.hpp"
 
 class Connection{
 private:
@@ -10,7 +11,7 @@ private:
 	Session session;
 public:
 	Connection(std::string ip,int port,std::string pseudo);
-	void start(/*IA & a*/);
+	void start(IA & ia);
 	~Connection();
 };
 
