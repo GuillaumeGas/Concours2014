@@ -19,8 +19,8 @@ public:
     ATTACK, DEFENSE
   };
   IA(){}
-  void change_state();
-  void read_data( GameData * info );
+  //void change_state();
+  void read_data( GameData & info );
   void load_info();
   void set_session(Session * s);
 
@@ -37,7 +37,7 @@ public:
   int choose_Planet(int & nbship); //choisi la planete a attaque
   void attack_planet(int Planet_Id, int From); // attaque une planete 
   void create_sheepAtt(int Planete_Id); // creer les vaisseau d'une planete
-  int choose_att();
+  //int choose_att();
   
 
   //DEF

@@ -32,7 +32,7 @@ void IA::set_session(Session * s){
 void IA::create_sheepDef(int planet_Id){
 	for(auto it : planet){
 		if(it.planetId == planet_Id){
-			s->orderBuild(planet_Id,it.shipBuildCountLimit-1);
+			session->orderBuild(planet_Id,it.shipBuildCountLimit-1);
 		}
 	}
 }
@@ -59,8 +59,8 @@ int IA::choose_Planet(int & nbship) {
  return planet;
 }
 
-void IA::read_data ( GameData * info ) {
-  my_info = info;
+void IA::read_data ( GameData & info ) {
+  my_info = &info;
 }
 
 
@@ -73,7 +73,7 @@ void IA::attack_planet ( int Planet_Id, int From ) {
       nb = it.shipCount;
     }
   }
-  s->orderMove ( From, Planet_Id, nb );
+  session->orderMove ( From, Planet_Id, nb );
 }
 
 
@@ -82,13 +82,13 @@ void IA::create_sheepAtt( int Planet_Id ) {
   if ( nb > planet[Planet_Id].shipBuildCountLimit) {
     nb =  planet[Planet_Id].shipBuildCountLimit;
   }
-  s->orderBuild( Planet_Id, nb);
+  session->orderBuild( Planet_Id, nb);
 }
 
 
 
 void IA::pass_rowAtt() {
-  int planet_att = choose_att();
+  int planet_att;/* = choose_att();*/
   int nbShip;
   int planet_to = choose_Planet(nbShip);
   
@@ -97,7 +97,7 @@ void IA::pass_rowAtt() {
       create_sheepAtt( planet_att );
       attack_planet( planet_att, planet_to );
     } else {
-      change_state();
+      //change_state();
     }
   }
 }
