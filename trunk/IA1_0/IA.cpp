@@ -137,11 +137,11 @@ void IA::pass_rowAtt() {
 void IA::move_fleet(int planet_Id, int From){
   //for( auto it : planet){
   //if(it.planetId == planet_Id){
-		  //if(it.shipCount > 2){
-		  session->orderMove(From,planet_Id,2);
-				//	}
-		  //		}
-		//	}
+  //if(it.shipCount > 2){
+  session->orderMove(From,planet_Id,2);
+  //	}
+  //		}
+  //	}
 }
 void IA::get_distances() {
   m_game_info = my_info->globalInformations();
@@ -153,6 +153,33 @@ void IA::get_distances() {
 }
 
 
+
+int IA::get_nearest(int planet_id, int & dist, int far) {
+  int planet = 0;
+  dist = -1;
+  for ( int i = 0 ; i < m_game_info.planetCount ; i++ ) {
+    auto it = m_distances.find ( ( pair< int, int >(planet_id, i ) ));
+    if ( (it->second < dist && it->second > far ) || dist == -1 ) {
+      planet = i;
+      dist = it->second;
+    }
+  }
+  return planet;
+}
+
+
+vector <int> IA::get_near( int planet_id , int dist ) {
+  vector<int> v;
+  for ( int i = 0 ; i < m_game_info.planetCount ; i++ ) {
+    auto it = m_distances.find ( ( pair< int, int >(planet_id, i )));
+    if (it->second == dist) {
+      v.push_back(i);
+    }
+  }
+  return v;
+}
+
+
 void IA::pass_rowLuck() {
   cout << "test 1" << endl;
   if ( my_info->globalInformations().currentRoundId < 2 ) {    
@@ -161,12 +188,16 @@ void IA::pass_rowLuck() {
     if ( planet.size() >  0 ) {
       cout << "pass row luck" << endl;
       int id = planet[0].planetId;
-      int nb = 0;
-      for ( int i = 0 ; i < m_game_info.planetCount ; i++ ) {
-	if ( m_distances.find ( pair< int, int >(id, i ) )->second < 10 && m_distances.find ( pair< int, int >(id, i ) )->second > 0 && nb < 3 ) {
-	  cout << "boucle pass row luck" << endl;
-	  move_fleet( i , id );
-	  nb++;
+      int nb = planet[0].shipCount/2;
+      int dist = 0;
+      int dist_r = -1;
+      while ( nb >= 0 && dist != dist_r) { 
+	dist_r = dist;
+	int i = get_nearest ( planet[0].planetId , dist, dist_r);
+	vector<int> v = get_near(planet[0].planetId, dist);
+	for ( int i = 0 ; i < v.size() && nb > 0; i++ ) {
+	  move_fleet( v[i], planet[0].planetId);
+	  nb--;
 	}
       }
       create_sheepDef( planet[0].planetId);

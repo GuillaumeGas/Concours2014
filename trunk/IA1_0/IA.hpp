@@ -52,6 +52,11 @@ public:
   void read_planet(int Planet_Id); //lis les donnes d'une planete
   void read_attack (); //lis toute les attaques ennemis
 
+
+
+  int get_nearest(int, int &, int);
+  vector <int> get_near( int planet_Id, int dist );
+
 private:
 
   Session * session;
