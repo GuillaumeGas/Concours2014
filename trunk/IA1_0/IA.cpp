@@ -38,3 +38,43 @@ void IA::pass_rowDef(){
 		}
 	}
 }
+
+int IA::choose_Planet() {
+  int planet = -1;
+  int min = -1;
+  for ( auto it : information ) {    
+    if ( it.second.first == my_info.currentRoundId ) {
+      if ( min > it.second.second.shipCount || min == -1 ) {
+	min = it.second.second.shipCount;
+	planet = it.first;
+      }
+    }
+  } 
+  return planet;
+}
+
+void IA::read_data ( GameInfos info ) {
+  my_info = info;
+}
+
+
+
+
+void IA::attack_planet ( int Planet_Id, int From ) {
+  int nb = 0;
+  for ( auto it : planet ) {
+    if ( it.planetId == From ) {
+      nb = it.shipCount();
+    }
+  }
+  orderMove ( from, Planet_Id, nb );
+}
+
+
+void IA::create_sheepAtt( int Planet_Id ) {
+  int nb = my_info.resources*my_info.shipCost;
+  if ( nb > planet[Planet_Id].shipBuildCountLimit) {
+    nb =  planet[Planet_Id].shipBuildCountLimit;
+  }
+  orderBuild( Planet_Id, nb);
+}
