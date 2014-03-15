@@ -51,6 +51,7 @@ void IA::pass_rowDef(){
     res+= it.resources;
   }
   res/=my_info->globalInformations().shipCost;
+  cout << "res" << endl;
 
   int min(100);
   for(auto it : planet){
@@ -65,9 +66,10 @@ void IA::pass_rowDef(){
   }
 
   int nb = res/L.size();
+  cout << "nb" << endl;
 	for(auto it : L){
 		create_sheepDef(it.planetId,nb);
-		cout << "pla : " << it.planetId << endl;
+		//cout << "pla : " << it.planetId << endl;
 	}
 	cout << "jouer" << endl;
 	jouer = true;

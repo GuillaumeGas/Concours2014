@@ -45,7 +45,7 @@ public:
   
 
   //DEF
-  void create_sheepDef(int planet_Id); //creer les vaisseau d'un planete Nb = (RP/X) - 1
+  void create_sheepDef(int planet_Id, int nb); //creer les vaisseau d'un planete Nb = (RP/X) - 1
   void move_fleet(int Planet_Id, int From); //deplace les vaisseau vers une autre planete
   void fuir(int Planet_Id); //fuis la planete car elle est attaque
   void construct_all_sheep(int Planet_Id); //construis tout les vaisseau d'une planete toute pour defense
@@ -55,7 +55,7 @@ public:
 
 
   int get_nearest(int, int &, int);
-  vector <int> get_near( int planet_Id, int dist );
+  std::vector <int> get_near( int planet_Id, int dist );
 
 private:
 
