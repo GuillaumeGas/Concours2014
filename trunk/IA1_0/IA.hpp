@@ -19,7 +19,7 @@ public:
     ATTACK, DEFENSE, LUCK
   };
   IA(){state = LUCK;}
-  //void change_state();
+  void change_state(State_t);
   void read_data( GameData & info );
   void load_info();
   void set_session(Session * s);
