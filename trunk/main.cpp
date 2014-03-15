@@ -1,10 +1,12 @@
 #include "Connection.hpp"
+#include <cstdlib>
 #include <iostream>
 using namespace std;
 
-int main(){
+int main(int argc,char ** argv){
 	try{
-		Connection("127.0.0.1",4242,"*team->power(socket&)");	
+		Connection game(argv[1],atoi(argv[2]),"TeamPower");
+		game.start();	
 	}catch(const char * e){
 		cerr<<e<<endl;
 		return -1;
