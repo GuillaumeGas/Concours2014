@@ -101,3 +101,12 @@ void IA::pass_rowAtt() {
     }
   }
 }
+
+void IA::get_distances() {
+  m_game_info = my_info->globalInformations();
+  for(int i = 0; i < m_game_info.planetCount; i++) {
+    for(int j = 0; j < m_game_info.planetCount; j++) {
+      m_distances.insert(pair<pair<int, int>, int >(pair<int, int>(i, j), my_info->distance(i, j)));
+    }			 
+  }
+}

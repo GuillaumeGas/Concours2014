@@ -31,7 +31,8 @@ public:
   void pass_rowAtt();
   void pass_rowDef();
 
-  
+  //a lancer au démarrage
+  void get_distances();
 
   //ATTACK
   int choose_Planet(int & nbship); //choisi la planete a attaque
@@ -52,7 +53,9 @@ private:
 
   Session * session;
   GameData * my_info;
+  GameInfos m_game_info;
   std::map < int, std::pair < int, ScanResult > > information;
+  std::map < std::pair< int, int >, int > m_distances;
   State_t state;
   PlanetList planet;
 
